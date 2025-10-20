@@ -59,7 +59,7 @@ async def get_amount(message: types.Message, state: FSMContext):
 
 @dp.message_handler(commands=["file"])
 async def send_file(message: types.Message):
-    if os.path.exists(FILE_NAME):
+    if os.path.exists('products.docx'):
         await message.answer_document(open('products.docx', "rb"))
     else:
         await message.answer("❌ Hozircha fayl mavjud emas!")

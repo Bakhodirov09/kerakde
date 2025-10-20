@@ -56,5 +56,12 @@ async def get_amount(message: types.Message, state: FSMContext):
     await message.answer("✅ Ma'lumot saqlandi!")
     await state.finish()
 
+@dp.message_handler(commands=["file"])
+async def send_file(message: types.Message):
+    if os.path.exists(FILE_NAME):
+        await message.answer_document(open('products.docx', "rb"))
+    else:
+        await message.answer("❌ Hozircha fayl mavjud emas!")
+
 if __name__ == "__main__":
     executor.start_polling(dp, skip_updates=True)

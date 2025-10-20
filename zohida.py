@@ -5,6 +5,7 @@ from aiogram.dispatcher import FSMContext
 from aiogram.dispatcher.filters.state import State, StatesGroup
 from aiogram.utils import executor
 from docx import Document
+import os
 
 TOKEN = "8045362943:AAGhvDXgKEfXp1N15oeI_XorUMQJp_lVCHw"
 
